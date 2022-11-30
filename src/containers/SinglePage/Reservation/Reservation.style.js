@@ -158,6 +158,26 @@ export const ItemWrapper = styled.div`
     }
   }
 `;
+export const ItemWrapperRoom = styled.div`
+  display: flex;
+  align-items: center;
+  //justify-content: space-between;
+  margin-bottom: 20px;
+  &:last-child {
+    margin-bottom: 10px;
+  }
+
+  .quantity {
+    height: 30px;
+    input {
+      font-size: 15px;
+    }
+    button.btn svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+`;
 
 export const FormActionArea = styled.div`
   button.ant-btn-primary {

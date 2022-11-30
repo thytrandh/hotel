@@ -11,13 +11,13 @@ const LogoArea = styled.div`
   }
 
   img {
-    width: 20px;
+    width: 22px;
   }
 
   h3 {
-    color: ${themeGet('primary.0', '#008489')};
+    color: ${themeGet('primary.0', '#f0a71d')};
     text-transform: capitalize;
-    font-size: 20px;
+    font-size: 23px;
     font-weight: 700;
     margin: 0 0 0 10px;
   }

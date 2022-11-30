@@ -26,13 +26,13 @@ export default function Reservation() {
   return (
     <Card
       className="reservation_sidebar"
-      header={<CardHeader />}
+      // header={<CardHeader />}
       content={<RenderReservationForm />}
-      footer={
-        <p>
-          Special offers available. <TextLink to="/#1" content="See details" />
-        </p>
-      }
+      // footer={
+      //   <p>
+      //     Special offers available. <TextLink to="/#1" content="See details" />
+      //   </p>
+      // }
     />
   );
 }

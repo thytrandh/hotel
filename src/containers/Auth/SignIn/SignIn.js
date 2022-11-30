@@ -26,8 +26,8 @@ const SignIn = () => {
         <Title>Welcome Back</Title>
         <TitleInfo>Please log into your account</TitleInfo>
         <SignInForm />
-        <Divider>Or log in with </Divider>
-        <SocialLogin />
+        {/* <Divider>Or log in with </Divider>
+        <SocialLogin /> */}
         <Text>
           Don't Have an Account?&nbsp;
           <Link to={REGISTRATION_PAGE}>Registration</Link>

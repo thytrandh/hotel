@@ -17,6 +17,7 @@ import SinglePageWrapper, { PostImage } from './SinglePageView.style';
 import PostImageGallery from './ImageGallery/ImageGallery';
 import useDataApi from 'library/hooks/useDataApi';
 import isEmpty from 'lodash/isEmpty';
+import EmptyRoom from './EmptyRoom/EmptyRoom';
 
 const SinglePage = () => {
   let { slug } = useParams();
@@ -88,10 +89,10 @@ const SinglePage = () => {
         </Modal>
       </PostImage>
 
-      <TopBar title={title} shareURL={href} author={author} media={gallery} />
+      {/* <TopBar title={title} shareURL={href} author={author} media={gallery} /> */}
 
       <Container>
-        <Row gutter={30} id="reviewSection" style={{ marginTop: 30 }}>
+        <Row gutter={40} id="reviewSection" style={{ marginTop: 40 }}>
           <Col xl={16}>
             <Description
               content={content}
@@ -100,8 +101,10 @@ const SinglePage = () => {
               rating={rating}
               ratingCount={ratingCount}
             />
-            <Amenities amenities={amenities} />
-            <Location location={data[0]} />
+            {/* <Amenities amenities={amenities} /> */}
+            <EmptyRoom />
+            {/* <Reservation /> */}
+            {/* <Location location={data[0]} /> */}
           </Col>
           <Col xl={8}>
             {width > 1200 ? (
@@ -123,7 +126,7 @@ const SinglePage = () => {
             )}
           </Col>
         </Row>
-        <Row gutter={30}>
+        <Row gutter={40}>
           <Col xl={16}>
             <Review
               reviews={reviews}

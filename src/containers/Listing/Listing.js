@@ -41,13 +41,13 @@ export default function Listing() {
               <FilterDrawer location={location} />
             )
           }
-          right={
-            <ShowMapCheckbox>
-              <Checkbox defaultChecked={false} onChange={handleMapToggle}>
-                Show map
-              </Checkbox>
-            </ShowMapCheckbox>
-          }
+          // right={
+          //   <ShowMapCheckbox>
+          //     <Checkbox defaultChecked={false} onChange={handleMapToggle}>
+          //       Show map
+          //     </Checkbox>
+          //   </ShowMapCheckbox>
+          // }
         />
       </Sticky>
 

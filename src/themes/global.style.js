@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background: ${themeGet('primary.0', '#008489')};
+    background: ${themeGet('primary.0', '#f0a71d')};
     color: ${themeGet('color.1', '#ffffff')};
   }
 
@@ -40,7 +40,7 @@ const GlobalStyle = createGlobalStyle`
   textarea,
   span,
   div {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
@@ -52,7 +52,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     -webkit-tap-highlight-color: transparent;
   }
 
@@ -147,11 +147,11 @@ const GlobalStyle = createGlobalStyle`
                   color: ${themeGet('text.0', '#2C2C2C')};
                   transition: color 0.2s ease-in-out;
                   &:hover {
-                    color: ${themeGet('primary.0', '#008489')};
+                    color: ${themeGet('primary.0', '#f0a71d')};
                   }
                   &.active {
                     font-weight: 700;
-                    color: ${themeGet('primary.0', '#008489')};
+                    color: ${themeGet('primary.0', '#f0a71d')};
                   }
                 }
                 button {
@@ -162,7 +162,7 @@ const GlobalStyle = createGlobalStyle`
                   background-color: transparent;
                   transition: color 0.2s ease-in-out;
                   &:hover {
-                    color: ${themeGet('primary.0', '#008489')};
+                    color: ${themeGet('primary.0', '#f0a71d')};
                   }
                   &:focus {
                     outline: none;
@@ -382,7 +382,7 @@ const GlobalStyle = createGlobalStyle`
           }
           &.ant-upload-drag-hover{
             .image-drag-area{
-              border-color: #48bdc1;
+              border-color: #fdcb6e;
             }
           }
         }
@@ -515,12 +515,12 @@ const GlobalStyle = createGlobalStyle`
 
   .quantity {
     button.btn {
-      border: 1px solid ${themeGet('primary.0', '#008489')};
+      border: 1px solid ${themeGet('primary.0', '#f0a71d')};
       svg {
-        fill: ${themeGet('primary.0', '#008489')};
+        fill: ${themeGet('primary.0', '#f0a71d')};
       }
       &:hover {
-        background-color: ${themeGet('primary.0', '#008489')};
+        background-color: ${themeGet('primary.0', '#f0a71d')};
         svg {
           fill: #ffffff;
         }
@@ -567,7 +567,7 @@ const GlobalStyle = createGlobalStyle`
           &:last-child {
             a {
               color: ${themeGet('color.1', '#ffffff')};
-              background-color: ${themeGet('primary.0', '#008489')};
+              background-color: ${themeGet('primary.0', '#f0a71d')};
               transition: opacity 0.2s ease;
               &:hover {
                 opacity: 0.9;
@@ -592,8 +592,8 @@ const GlobalStyle = createGlobalStyle`
             color: ${themeGet('text.0', '#2C2C2C')};
             &.active {
               font-weight: 700;
-              border-color: ${themeGet('primary.0', '#008489')};
-              color: ${themeGet('primary.0', '#008489')};
+              border-color: ${themeGet('primary.0', '#f0a71d')};
+              color: ${themeGet('primary.0', '#f0a71d')};
             }
           }
           button {
@@ -607,7 +607,7 @@ const GlobalStyle = createGlobalStyle`
             color: ${themeGet('text.0', '#2C2C2C')};
             transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
             &:hover {
-              color: ${themeGet('primary.0', '#008489')};
+              color: ${themeGet('primary.0', '#f0a71d')};
             }
             &focus {
               outline: 0;
@@ -615,7 +615,7 @@ const GlobalStyle = createGlobalStyle`
           }
           &:hover {
             a {
-              color: ${themeGet('primary.0', '#008489')};
+              color: ${themeGet('primary.0', '#f0a71d')};
             }
           }
         }
@@ -727,16 +727,16 @@ const GlobalStyle = createGlobalStyle`
     padding: 0 !important;
     background-color: ${themeGet('color.1', '#ffffff')};
     header {
-      padding-bottom: 27px;
-      margin-bottom: 29px;
-      padding: 25px 30px 26px 30px;
-      border-bottom: 1px solid ${themeGet('border.0', '#EBEBEB')};
+      //padding-bottom: 27px;
+      //margin-bottom: 29px;
+      //padding: 25px 30px 26px 30px;
+      //border-bottom: 1px solid ${themeGet('border.0', '#EBEBEB')};
       @media   (max-width: 375px) {
         padding: 25px 15px 26px 15px;
       }
       a {
         &:hover {
-          color: #31b8bd;
+          color: #fdcb6e;
         }
       }
     }
@@ -746,12 +746,60 @@ const GlobalStyle = createGlobalStyle`
       font-size: 15px;
       font-weight: 400;
       a {
-        color: ${themeGet('primary.0', '#008489')};
+        color: ${themeGet('primary.0', '#f0a71d')};
         font-weight: 700;
         &:hover,
         &:focus {
           outline: 0;
-          color: #008489d1;
+          color:  '#f0a71d';
+          text-decoration: underline;
+        }
+      }
+    }
+
+    footer {
+      padding: 25px 30px 28px 30px;
+      margin-top: 29px;
+      border-top: 1px solid ${themeGet('border.0', '#EBEBEB')};
+      @media   (max-width: 375px) {
+        padding: 20px 15px 25px 15px;
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .empty_room {
+    padding: 0 !important;
+    background-color: ${themeGet('color.1', '#ffffff')};
+    header {
+      padding-bottom: 27px;
+      margin-bottom: 29px;
+      padding: 25px 30px 26px 30px;
+      border-bottom: 1px solid ${themeGet('border.0', '#EBEBEB')};
+      @media   (max-width: 375px) {
+        padding: 25px 15px 26px 15px;
+      }
+      a {
+        &:hover {
+          color: #fdcb6e;
+        }
+      }
+    }
+
+    p {
+      color: ${themeGet('text.0', '#2C2C2C')};
+      font-size: 15px;
+      font-weight: 400;
+      a {
+        color: ${themeGet('primary.0', '#f0a71d')};
+        font-weight: 700;
+        &:hover,
+        &:focus {
+          outline: 0;
+          color:  '#f0a71d';
           text-decoration: underline;
         }
       }
@@ -788,7 +836,7 @@ const GlobalStyle = createGlobalStyle`
   .ant-checkbox:hover .ant-checkbox-inner, 
   .ant-checkbox-input:focus + .ant-checkbox-inner,
   .ant-checkbox-checked::after {
-    border-color: ${themeGet('primary.0', '#008489')} !important;
+    border-color: ${themeGet('primary.0',  '#f0a71d')} !important;
   }
 
   .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
@@ -801,8 +849,8 @@ const GlobalStyle = createGlobalStyle`
 
   .ant-radio-group-solid .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled):hover {
     opacity: 0.9;
-    border-color: ${themeGet('primary.0', '#008489')} !important;
-    background: ${themeGet('primary.0', '#008489')} !important;
+    border-color: ${themeGet('primary.0',  '#f0a71d')} !important;
+    background: ${themeGet('primary.0',  '#f0a71d')} !important;
   }
 `;
 

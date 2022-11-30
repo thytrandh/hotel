@@ -73,6 +73,7 @@ const HeaderWrapper = styled.header`
             h3 {
               color: ${themeGet('color.1', '#ffffff')};
             }
+            
           }
         }
       }
@@ -95,7 +96,7 @@ const HeaderWrapper = styled.header`
               }
 
               h3 {
-                color: ${themeGet('primary.0', '#008489')};
+                color: ${themeGet('primary.0', '#f0a71d')};
               }
             }
           }
@@ -105,11 +106,11 @@ const HeaderWrapper = styled.header`
               a {
                 color: ${themeGet('text.0', '#2C2C2C')};
                 &:hover {
-                  color: ${themeGet('primary.0', '#008489')};
+                  color: ${themeGet('primary.0', '#f0a71d')};
                 }
                 &.active {
-                  color: ${themeGet('primary.0', '#008489')};
-                  border-bottom: 3px solid ${themeGet('primary.0', '#008489')};
+                  color: ${themeGet('primary.0', '#f0a71d')};
+                  border-bottom: 0px solid ${themeGet('primary.0', '#f0a71d')};
                 }
               }
             }
@@ -143,7 +144,7 @@ const HeaderWrapper = styled.header`
               }
 
               h3 {
-                color: ${themeGet('primary.0', '#008489')};
+                color: ${themeGet('primary.0', '#f0a71d')};
               }
             }
           }
@@ -195,7 +196,7 @@ export const MobileNavbar = styled.nav`
 
       > span {
         width: 23px;
-        background-color: ${themeGet('primary.0', '#008489')};
+        background-color: ${themeGet('primary.0', '#f0a71d')};
       }
     }
 
@@ -300,7 +301,7 @@ export const AvatarInfo = styled.div`
     &:focus {
       text-decoration: none;
       outline: 0;
-      color: ${themeGet('primary.0', '#008489')};
+      color: ${themeGet('primary.0', '#f0a71d')};
     }
   }
 `;
@@ -351,7 +352,7 @@ export const NavbarSearchWrapper = styled.div`
 
     &:hover,
     &:focus {
-      border-color: ${themeGet('primary.0', '#008489')};
+      border-color: ${themeGet('primary.0', '#f0a71d')};
     }
   }
 

@@ -8,7 +8,7 @@ const Wrapper = styled.div`
 `;
 
 export const FormWrapper = styled.div`
-  width: 43%;
+  width: 45%;
   padding: 81px;
   @media (min-width: 1441px) {
     padding: 130px;
@@ -29,6 +29,7 @@ export const FormWrapper = styled.div`
   }
 
   .signin-btn {
+    margin: 41px 0 !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,8 +37,8 @@ export const FormWrapper = styled.div`
     height: 57px;
     font-size: 17px;
     font-weight: 700;
-    border-color: ${themeGet('primary.0', '#008489')};
-    background-color: ${themeGet('primary.0', '#008489')};
+    border-color: ${themeGet('primary.0',  '#f0a71d')};
+    background-color: ${themeGet('primary.0',  '#f0a71d')};
     @media (max-width: 1536px) {
       height: 54px;
       font-size: 16px;
@@ -53,8 +54,8 @@ export const FormWrapper = styled.div`
     }
     &:hover,
     &:focus {
-      border-color: #008489d1;
-      background-color: #008489d1;
+      border-color: #fdcb6e;
+      background-color: #fdcb6e;
     }
   }
 
@@ -110,14 +111,14 @@ export const FieldWrapper = styled.div`
   margin-top: 40px;
   margin-bottom: 40px;
   > a {
-    color: ${themeGet('primary.0', '#008489')};
+    color: ${themeGet('primary.0', '#f0a71d')};
     font-size: 15px;
     font-weight: 700;
     line-height: 1;
     &:hover,
     &:focus {
       outline: none;
-      color: #008489d1;
+      color: #fdcb6e;
       text-decoration: none;
     }
   }
@@ -138,7 +139,7 @@ export const SwitchWrapper = styled.div`
     min-width: 36px;
     height: 21px;
     &.ant-switch-checked {
-      background-color: ${themeGet('primary.0', '#008489')};
+      background-color: ${themeGet('primary.0', '#f0a71d')};
     }
     &::after {
       width: 17px;
@@ -163,11 +164,11 @@ export const Label = styled.span`
 
 export const Title = styled.h2`
   color: ${themeGet('text.0', '#2C2C2C')};
-  font-size: 45px;
+  font-size: 40px;
   line-height: 54px;
   font-weight: 700;
   margin-bottom: 0;
-  margin-top: 58px;
+  margin-top: 40px;
   @media (max-width: 1600px) {
     font-size: 38px;
     line-height: 48px;
@@ -184,7 +185,7 @@ export const Title = styled.h2`
 
 export const TitleInfo = styled.p`
   color: ${themeGet('text.2', '#777777')};
-  font-size: 25px;
+  font-size: 20px;
   line-height: 30px;
   margin-bottom: 45px;
   margin-top: 10px;
@@ -206,18 +207,18 @@ export const Text = styled.p`
   color: ${themeGet('text.2', '#777777')};
   line-height: 1;
   a {
-    color: ${themeGet('primary.0', '#008489')};
+    color: ${themeGet('primary.0', '#f0a71d')};
     &:hover,
     &:focus {
       outline: none;
-      color: #008489d1;
+      color: #fdcb6e;
       text-decoration: none;
     }
   }
 `;
 
 export const BannerWrapper = styled.div`
-  width: 57%;
+  width: 55%;
   height: 100%;
   position: fixed;
   top: 0;

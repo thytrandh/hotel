@@ -215,7 +215,7 @@ const FilterDrawer = ({ history, location }) => {
             {/* End of date filter element */}
 
             {/* Start amenities filter element */}
-            <AccordionItem>
+            {/* <AccordionItem>
               <AccordionItemHeading>
                 <AccordionItemButton>
                   <Heading as="h4" content="Amenities" />
@@ -229,11 +229,11 @@ const FilterDrawer = ({ history, location }) => {
                   onChange={onChangeAmenity}
                 />
               </AccordionItemPanel>
-            </AccordionItem>
+            </AccordionItem> */}
             {/* End of amenities filter element */}
 
             {/* Start property type filter element */}
-            <AccordionItem>
+            {/* <AccordionItem>
               <AccordionItemHeading>
                 <AccordionItemButton>
                   <Heading as="h4" content="Property Type" />
@@ -247,7 +247,7 @@ const FilterDrawer = ({ history, location }) => {
                   onChange={onChangeProperty}
                 />
               </AccordionItemPanel>
-            </AccordionItem>
+            </AccordionItem> */}
             {/* End of property type filter element */}
 
             {/* Room & Guest type filter element */}

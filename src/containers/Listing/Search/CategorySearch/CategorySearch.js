@@ -98,7 +98,7 @@ const CategorySearch = ({ location }) => {
 
   return (
     <CategorySearchWrapper>
-      <ViewWithPopup
+      {/* <ViewWithPopup
         className={amenities.length ? 'activated' : ''}
         key={getAmenities.id}
         noView={true}
@@ -134,7 +134,7 @@ const CategorySearch = ({ location }) => {
             onChange={(value) => onChange(value, 'property')}
           />
         }
-      />
+      /> */}
 
       <ViewWithPopup
         className={

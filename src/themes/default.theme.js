@@ -1,7 +1,8 @@
 const defaultTheme = {
   breakpoints: ['481px', '768px', '992px', '1201px', '1441px'],
   primary: [
-    '#008489', // 0: Default
+    '#f0a71d', 
+    '#fdcb6e', // 0: Default
     '#399C9F', // 1: Chart
   ],
   color: [
@@ -49,8 +50,11 @@ const defaultTheme = {
     'rgba(0, 0, 0, 0.16)', // 1: Carousel Button shadow
   ],
   fonts: {
-    primary: 'Lato, sans-serif',
+    primary: 'Quicksand, sans-serif',
   },
 };
 
 export default defaultTheme;
+
+// '#008489', 
+// '#399C9F', 

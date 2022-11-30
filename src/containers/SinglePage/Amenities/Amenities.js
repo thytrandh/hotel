@@ -10,8 +10,7 @@ import { Element } from 'react-scroll';
 
 const Amenities = ({ titleStyle, linkStyle }) => {
   return (
-    <Element name="amenities" className="Amenities">
-      <AmenitiesWrapper>
+    <AmenitiesWrapper>
         <Heading as="h2" content="Amenities" {...titleStyle} />
         <AmenitiesArea>
           <IconCard icon={<FaWifi />} title="Free wifi" />
@@ -19,11 +18,10 @@ const Amenities = ({ titleStyle, linkStyle }) => {
           <IconCard icon={<FaSwimmer />} title="Free pool" />
           <IconCard icon={<FaAirFreshener />} title="Air Freshener" />
         </AmenitiesArea>
-        <TextButton>
+        {/* <TextButton>
           <TextLink link="#1" content="Show all amenities" {...linkStyle} />
-        </TextButton>
+        </TextButton> */}
       </AmenitiesWrapper>
-    </Element>
   );
 };
 

@@ -16,7 +16,7 @@ const SearchArea = ({ searchTitleStyle, searchDescriptionStyle }) => {
         controls={false}
         options={{ gap: 0, autoplay: 5000, animationDuration: 1000 }}
         bullets={true}
-        numberOfBullets={3}
+        numberOfBullets={4}
       >
         <>
           <GlideSlide>
@@ -27,6 +27,9 @@ const SearchArea = ({ searchTitleStyle, searchDescriptionStyle }) => {
           </GlideSlide>
           <GlideSlide>
             <img src="/images/banner/3.jpg" alt="Banner 3" />
+          </GlideSlide>
+          <GlideSlide>
+            <img src="/images/banner/4.jpg" alt="Banner 3" />
           </GlideSlide>
         </>
       </GlideCarousel>
@@ -39,7 +42,7 @@ const SearchArea = ({ searchTitleStyle, searchDescriptionStyle }) => {
           />
           <Text
             {...searchDescriptionStyle}
-            content="compares prices from 200+ booking sites to help you find the lowest
+            content="Compares prices from 200+ booking sites to help you find the lowest
           price on the right hotel for you."
           />
           <SearchForm />

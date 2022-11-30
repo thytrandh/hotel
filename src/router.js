@@ -19,6 +19,7 @@ import {
   AGENT_IMAGE_EDIT_PAGE,
   AGENT_PASSWORD_CHANGE_PAGE,
   AGENT_ACCOUNT_SETTINGS_PAGE,
+  PAYMENT_PAGE,
 } from './settings/constant';
 
 // protected route
@@ -37,6 +38,9 @@ const HomePage = React.lazy(() => import('containers/Home/Home'));
 const ListingPage = React.lazy(() => import('containers/Listing/Listing'));
 const SinglePageView = React.lazy(() =>
   import('containers/SinglePage/SinglePageView')
+);
+const PaymentPage = React.lazy(() =>
+  import('containers/Payment/Payment')
 );
 const AgentDetailsViewPage = React.lazy(() =>
   import('containers/Agent/AccountDetails/AgentDetailsViewPage')
@@ -96,10 +100,18 @@ export default function AppRoutes() {
           }
         />
         <Route
-          path={`${SINGLE_POST_PAGE}/:slug`}
+            path={`${SINGLE_POST_PAGE}/:slug`}
+            element={
+              <React.Suspense fallback={<Loader />}>
+                 <SinglePageView />
+              </React.Suspense>
+            }
+        />
+        <Route
+          path={PAYMENT_PAGE}
           element={
             <React.Suspense fallback={<Loader />}>
-              <SinglePageView />
+              <PaymentPage />
             </React.Suspense>
           }
         />

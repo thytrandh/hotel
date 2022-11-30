@@ -187,7 +187,7 @@ export const HeaderSection = styled.div`
   justify-content: space-between;
   padding-bottom: 25px;
   margin-bottom: 30px;
-  border-bottom: 1px solid ${themeGet('border.3', '#E6E6E6')};
+  //border-bottom: 1px solid ${themeGet('border.3', '#E6E6E6')};
   @media (max-width: 736px) {
     flex-direction: column;
     align-items: flex-start;

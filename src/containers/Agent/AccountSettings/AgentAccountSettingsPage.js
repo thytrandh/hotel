@@ -52,7 +52,7 @@ export default function AgentAccountSettingsPage() {
                   alt="avatar"
                 />
                 <ContentWrapper>
-                  <AgentName>Aziz Acharki Ahmedh</AgentName>
+                  <AgentName>dhthytran</AgentName>
                   <Link to={AGENT_PROFILE_PAGE}>View profile</Link>
                 </ContentWrapper>
               </AgentAvatar>
