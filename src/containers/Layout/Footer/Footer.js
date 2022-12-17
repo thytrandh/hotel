@@ -14,7 +14,7 @@ const Footer = () => {
           title="TripFinder."
         />
       }
-      menu={<FooterMenu />}
+      // menu={<FooterMenu />}
       copyright={`Copyright @ ${new Date().getFullYear()} Group02, Research and Development.`}
     />
   );
