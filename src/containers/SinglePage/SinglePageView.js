@@ -101,7 +101,7 @@ const SinglePage = () => {
               rating={rating}
               ratingCount={ratingCount}
             />
-            {/* <Amenities amenities={amenities} /> */}
+            <Amenities amenities={amenities} />
             <EmptyRoom />
             {/* <Reservation /> */}
             {/* <Location location={data[0]} /> */}

@@ -8,11 +8,14 @@ import {
   AGENT_ACCOUNT_SETTINGS_PAGE,
   ADD_HOTEL_PAGE,
 } from 'settings/constant';
+import { logout } from 'containers/Auth/authSlice';
+import { useDispatch } from 'react-redux';
 
 export default function ProfileMenu({ avatar }) {
   let navigate = useNavigate();
   const { logOut } = useContext(AuthContext);
   const [state, setState] = useState(false);
+  const dispatch = useDispatch();
   const handleDropdown = () => {
     setState(!state);
   };

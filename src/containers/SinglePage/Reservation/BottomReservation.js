@@ -10,7 +10,7 @@ const BottomReservation = ({ title, price, rating, ratingCount }) => {
 
   return (
     <>
-      {/* <StickyBooking
+      <StickyBooking
         logo="/images/logo-alt.svg"
         title={title}
         price={price}
@@ -22,7 +22,7 @@ const BottomReservation = ({ title, price, rating, ratingCount }) => {
             Book
           </Button>
         }
-      /> */}
+      />
 
       <Modal
         visible={visible}

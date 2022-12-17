@@ -12,10 +12,10 @@ export const Header = styled.header`
 `;
 
 export const Content = styled.div`
-  padding: 1.5rem 0;
+  //padding: 1.5rem 0;
 `;
 export const Footer = styled.footer`
-  display: flex;
-  justify-content: space-between;
+  //display: flex;
+  //justify-content: space-between;
   align-items: center;
 `;

@@ -24,6 +24,7 @@ import HeaderWrapper, {
   AvatarInfo,
   LogoArea,
 } from './Header.style';
+import { useDispatch, useSelector } from 'react-redux';
 
 const avatarImg = `http://s3.amazonaws.com/redqteam.com/isomorphic-reloaded-image/profilepic.png`;
 const LogoIcon = () => (
@@ -48,7 +49,6 @@ export default function Header() {
     setState(!state);
   };
   const headerType = location.pathname === '/' ? 'transparent' : 'default';
-
   return (
     <HeaderWrapper>
       <Sticky

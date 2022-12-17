@@ -1,13 +1,21 @@
-import React, { useContext } from 'react';
-import { Navigate } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { useForm, Controller } from 'react-hook-form';
 import { MdLockOpen } from 'react-icons/md';
 import { Input, Switch, Button } from 'antd';
 import FormControl from 'components/UI/FormControl/FormControl';
 import { AuthContext } from 'context/AuthProvider';
 import { FieldWrapper, SwitchWrapper, Label } from '../Auth.style';
+import { register } from '../authSlice';
+import { useDispatch, useSelector } from 'react-redux';
 
 const SignUpForm = () => {
+
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.auth.currentUser?.data); //user
+  
+  const navigate = useNavigate();
+
   const { signUp, loggedIn } = useContext(AuthContext);
   const {
     control,
@@ -19,12 +27,37 @@ const SignUpForm = () => {
   });
   const password = watch('password');
   const confirmPassword = watch('confirmPassword');
-  const onSubmit = (data) => {
+  let role = "guest";
+  const onSubmit = (values) => {
+    const { username, email, password, confirmPassword, supplierAccount } = values;
+    console.log(supplierAccount);
+    if(supplierAccount === true){
+      role = "supplier";
+    }
+    console.log(role);
+    dispatch(
+      register({
+        username, 
+        email, 
+        password,
+        role,
+      })
+    );
+    console.log(values);
+    // console.log(username, email, password, role);
     signUp(data);
   };
-  if (loggedIn) {
-    return <Navigate to="/" replace={true} />;
-  }
+  useEffect(() => {
+    const role = data?.role;
+    if(role === "guest") {
+      navigate("/");
+    } else if (role === "supplier"){
+      navigate("/profile");
+    }
+  }, [data]);
+  // if (loggedIn) {
+  //   return <Navigate to="/" replace={true} />;
+  // }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -146,18 +179,6 @@ const SignUpForm = () => {
             )}
           />
           <Label>Sign up for a Supplier Account</Label>
-        </SwitchWrapper>
-        <SwitchWrapper>
-          <Controller
-            control={control}
-            name="guestAccount"
-            valueName="checked"
-            defaultValue={false}
-            render={({ field: { onChange, value } }) => (
-              <Switch onChange={onChange} checked={value} />
-            )}
-          />
-          <Label>Sign up for a Guest Account</Label>
         </SwitchWrapper>
       </FieldWrapper>
       <Button

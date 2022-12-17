@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import React, { useContext, useEffect } from 'react';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { useForm, Controller } from 'react-hook-form';
 import { MdLockOpen } from 'react-icons/md';
 import { Input, Switch, Button } from 'antd';
@@ -7,20 +7,45 @@ import FormControl from 'components/UI/FormControl/FormControl';
 import { AuthContext } from 'context/AuthProvider';
 import { FORGET_PASSWORD_PAGE } from 'settings/constant';
 import { FieldWrapper, SwitchWrapper, Label } from '../Auth.style';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../authSlice';
+
 
 export default function SignInForm() {
-  const { signIn, loggedIn } = useContext(AuthContext);
+
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.auth.currentUser?.user);
+  const navigate = useNavigate();
+
+  const { signIn, loggedIn} = useContext(AuthContext);
   const {
     control,
     formState: { errors },
     handleSubmit,
   } = useForm();
   const onSubmit = (data) => {
-    signIn(data);
+    const { email, password, rememberMe } = data;
+    dispatch(
+      login({
+        email, 
+        password,
+      })
+    );
+    console.log(email, password);
+    console.log(data);
+    signIn(user);
   };
-  if (loggedIn) {
-    return <Navigate to="/" replace={true} />;
-  }
+  useEffect(() => {
+    const role = user?.role;
+    if(role === "guest") {
+      navigate("/");
+    } else if (role === "supplier"){
+      navigate("/profile");
+    }
+  }, [user]);
+  // if (loggedIn) {
+  //   return <Navigate to="/" replace={true} />;
+  // }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

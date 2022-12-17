@@ -1,4 +1,6 @@
+import { logout } from 'containers/Auth/authSlice';
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 export const AuthContext = React.createContext();
@@ -15,25 +17,27 @@ const AuthProvider = (props) => {
   let navigate = useNavigate();
   const [loggedIn, setLoggedIn] = useState(false);
   const [user, setUser] = useState({});
+  const dispatch = useDispatch();
 
   const signIn = (params) => {
     console.log(params, 'sign in form Props');
-    setUser(fakeUserData);
+    setUser(params);
     setLoggedIn(true);
-    navigate('/', { replace: true });
   };
 
   const signUp = (params) => {
     console.log(params, 'sign up form Props');
-    setUser(fakeUserData);
-    setLoggedIn(true);
-    navigate('/', { replace: true });
+      setUser(params);
+      setLoggedIn(true);
+      // navigate('/', { replace: true });
   };
 
   const logOut = () => {
     setUser(null);
     setLoggedIn(false);
+    dispatch(logout());
   };
+
 
   return (
     <AuthContext.Provider

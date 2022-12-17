@@ -5,9 +5,9 @@ import { useLoadScript, StandaloneSearchBox } from '@react-google-maps/api';
 
 const SearchInput = (props) => {
   const [searchBox, setSearchBox] = useState();
-  const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY,
-  });
+  // const { isLoaded, loadError } = useLoadScript({
+  //   googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAP_API_KEY,
+  // });
   const { getInputValue } = props;
   const [locationInput, setLocationInput] = useState({
     searchedLocation: '',
@@ -46,13 +46,13 @@ const SearchInput = (props) => {
     getInputValue(locationInput);
   };
 
-  if (loadError) {
-    return <div>Map cannot be loaded right now, sorry.</div>;
-  }
+  // if (loadError) {
+  //   return <div>Map cannot be loaded right now, sorry.</div>;
+  // }
 
   return (
     <div className="map_autocomplete">
-      {isLoaded && (
+      {/* {isLoaded && (
         <StandaloneSearchBox onLoad={onLoad} onPlacesChanged={onPlacesChanged}>
           <Input
             type="text"
@@ -64,7 +64,16 @@ const SearchInput = (props) => {
             onPressEnter={handleOnPressEnter}
           />
         </StandaloneSearchBox>
-      )}
+      )} */}
+      <Input
+            type="text"
+            defaultValue=""
+            value={locationInput.searchedLocation || ''}
+            placeholder="Enter your destination..."
+            size="large"
+            onChange={handleOnChange}
+            onPressEnter={handleOnPressEnter}
+          />
     </div>
   );
 };

@@ -11,27 +11,31 @@ import { Button } from "antd";
 
 const roomType = 'Standard';
 const price = '123.000';
+const furniture = '2 single beds, 1 large double bed, Minibar';
+const dimension = '200';
+const capacity = '3';
 
 
-const RoomDescription = ({ priceStyle, pricePeriodStyle, linkStyle }) => {
+
+const RoomDescription = ({ price, roomType, furniture, dimension, capacity }) => {
    return (
     <Fragment>
         <Heading
             content={
                 <Fragment>
-                    <div>{roomType}</div>
+                    <div className="room-type">{roomType}</div>
                     <div style={{display: "flex"}}>
                         <Text  style={{margin: "0 5px 0 0"}} as="p" content='Furniture: '/>
-                        <Text as="p" content='2 single beds, 1 large double bed, Minibar'/>
+                        <Text as="p" content={furniture}/>
                     </div>
                     <div style={{display: "flex"}}>
                         <Text  style={{margin: "0 5px 0 0"}} as="p" content='Dimension: '/>
-                        <Text as="p" content='20'/>  
+                        <Text as="p" content={dimension}/>  
                         <Text style={{margin: "0 0 0 3px"}}as="p" content='Square'/>  
                     </div>
                     <div style={{display: "flex"}}>
                         <Text  style={{margin: "0 5px 0 0"}} as="p" content='Capacity: '/>
-                        <Text as="p" content='2'/>  
+                        <Text as="p" content={capacity}/>  
                         <Text style={{margin: "0 0 0 3px"}}as="p" content='Guest'/>  
                     </div>
                 </Fragment>
@@ -41,8 +45,8 @@ const RoomDescription = ({ priceStyle, pricePeriodStyle, linkStyle }) => {
             content={
                 <Fragment>
                     <div style={{display: "flex", alignItems: "center"}}>
+                        <Text as="span" content={price}  />
                         <Text as="span" content=" VND"/>
-                        <Text as="span" content={price} {...pricePeriodStyle} />
                         <Text as="p" content="/"/>
                         <Text as="p" content="night"/>
                         <Text as="p" content="/"/>
@@ -50,13 +54,12 @@ const RoomDescription = ({ priceStyle, pricePeriodStyle, linkStyle }) => {
                     </div>
                 </Fragment>
             }
-            {...priceStyle}
         />
     </Fragment>
    )
 }
 
-const ReservationForm = () => {
+const ChooseRoom = () => {
     const [formState, setFormState] = useState({room: 0,});
     const handleIncrement = (type) => {
         setFormState({
@@ -80,6 +83,11 @@ const ReservationForm = () => {
           [type]: currentValue,
         });
       };
+
+      const handleClickChooseRoom = () => {
+        
+      }
+
     return(
         <ReservationFormWrapper className="form-container">
             <div style={{display: "flex", alignItems: "center"}}>
@@ -95,8 +103,8 @@ const ReservationForm = () => {
                 </ItemWrapperRoom>
                 </RoomGuestWrapper>
                 <FormActionArea>
-                    <Button htmlType="submit" type="primary">
-                        Book now
+                    <Button onClick={() => handleClickChooseRoom()} style={{borderRadius: "3px", cursor: "pointer"}} htmlType="submit" type="primary">
+                        Choose Room
                     </Button>
                 </FormActionArea>
 
@@ -115,16 +123,22 @@ const EmptyRoom =  ({titleStyle}) =>  {
                 <RoomCard
                     className="empty_room"
                     header={
-                        <RoomDescription/>
+                        <RoomDescription  
+                        price = {price}
+                        roomType={roomType}
+                        furniture={furniture}
+                        dimension={dimension}
+                        capacity={capacity}
+                        />
                     }
-                    content={<ReservationForm />}
+                    content={<ChooseRoom />}
                 />
                 <RoomCard
                     className="empty_room"
                     header={
                         <RoomDescription/>
                     }
-                    content={<ReservationForm />}
+                    content={<ChooseRoom />}
                 />
             </div>
         </EmptyRoomWrapper>

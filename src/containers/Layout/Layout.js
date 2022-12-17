@@ -32,6 +32,7 @@ export default function Layout() {
   return (
     <LayoutProvider>
       {location.pathname === LOGIN_PAGE ||
+      location.pathname === AGENT_PROFILE_PAGE ||
       location.pathname === CHANGE_PASSWORD_PAGE ||
       location.pathname === FORGET_PASSWORD_PAGE ||
       location.pathname === REGISTRATION_PAGE ? (
@@ -47,7 +48,7 @@ export default function Layout() {
           {location.pathname === LISTING_POSTS_PAGE ||
           location.pathname === PRICING_PLAN_PAGE ||
           location.pathname === ADD_HOTEL_PAGE ||
-          location.pathname === AGENT_PROFILE_PAGE ||
+          // location.pathname === AGENT_PROFILE_PAGE ||
           location.pathname === CHANGE_PASSWORD_PAGE ||
           location.pathname === FORGET_PASSWORD_PAGE ||
           location.pathname === PRIVACY_PAGE ||

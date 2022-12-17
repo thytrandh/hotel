@@ -192,7 +192,8 @@ export const FormActionArea = styled.div`
     &:hover,
     &:focus {
       outline: none;
-      opacity: 0.93;
+      //opacity: 0.93;
+      opacity: 0.85;
     }
   }
 `;

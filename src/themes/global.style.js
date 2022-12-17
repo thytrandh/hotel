@@ -727,10 +727,14 @@ const GlobalStyle = createGlobalStyle`
     padding: 0 !important;
     background-color: ${themeGet('color.1', '#ffffff')};
     header {
-      //padding-bottom: 27px;
-      //margin-bottom: 29px;
+      //Đây nè
+      //
+      font-size: 12px;
+      padding-bottom: 27px;
+      margin-bottom: 29px;
       //padding: 25px 30px 26px 30px;
-      //border-bottom: 1px solid ${themeGet('border.0', '#EBEBEB')};
+      padding: 20px 30px 20px 30px;
+      border-bottom: 1px solid ${themeGet('border.0', '#EBEBEB')};
       @media   (max-width: 375px) {
         padding: 25px 15px 26px 15px;
       }
@@ -773,7 +777,8 @@ const GlobalStyle = createGlobalStyle`
 
   .empty_room {
     padding: 0 !important;
-    background-color: ${themeGet('color.1', '#ffffff')};
+    //background-color: ${themeGet('color.1', '#ffffff')};
+    background-color: ${themeGet('color.2', '#F7F7F7')};
     header {
       padding-bottom: 27px;
       margin-bottom: 29px;

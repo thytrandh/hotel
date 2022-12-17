@@ -5,19 +5,34 @@ import Heading from 'components/UI/Heading/Heading';
 import Text from 'components/UI/Text/Text';
 import TextLink from 'components/UI/TextLink/TextLink';
 import RenderReservationForm from './RenderReservationForm';
+import ReservationFormWrapper, { FormActionArea } from './Reservation.style';
+import { Button } from 'antd';
 
-const CardHeader = ({ priceStyle, pricePeriodStyle, linkStyle }) => {
+// const CardHeader = ({ priceStyle, pricePeriodStyle, linkStyle }) => {
+//   return (
+//     <Fragment>
+//       <Heading
+//         content={
+//           <Fragment>
+//             $162 <Text as="span" content="/ night" {...pricePeriodStyle} />
+//           </Fragment>
+//         }
+//         {...priceStyle}
+//       />
+//       <TextLink link="/#1" content="Contact Hotel" {...linkStyle} />
+//     </Fragment>
+//   );
+// };
+
+const CardHeader = () => {
   return (
     <Fragment>
       <Heading
         content={
-          <Fragment>
-            $162 <Text as="span" content="/ night" {...pricePeriodStyle} />
-          </Fragment>
+          <Fragment>Booking Information</Fragment>
         }
-        {...priceStyle}
       />
-      <TextLink link="/#1" content="Contact Hotel" {...linkStyle} />
+      
     </Fragment>
   );
 };
@@ -26,13 +41,28 @@ export default function Reservation() {
   return (
     <Card
       className="reservation_sidebar"
-      // header={<CardHeader />}
+      header={<CardHeader />}
       content={<RenderReservationForm />}
-      // footer={
-      //   <p>
-      //     Special offers available. <TextLink to="/#1" content="See details" />
-      //   </p>
-      // }
+      footer={
+        // <p>
+        //   Special offers available. <TextLink to="/#1" content="See details" />
+        // </p>
+        
+        <FormActionArea>
+          <div className="total" style={{display: "flex", justifyContent: "space-between", paddingBottom: "20px"}}>
+            <p style={{fontWeight: "700", marginRight: "5px", fontSize: "16px"}}>Total: </p>
+            <div className="price" style={{display: "flex"}}>
+              <p style={{ color: "#f0a71d", fontWeight: "700", fontSize: "16px"}}>300</p>
+              <p style={{ color: "#f0a71d", fontWeight: "700", fontSize: "16px"}}>.000</p>
+              <p style={{ color: "#f0a71d", fontWeight: "700", fontSize: "16px"}}>VND</p>
+            </div>
+          </div>
+            <Button htmlType="submit" type="primary">
+              Book Now
+            </Button>
+        </FormActionArea> 
+        
+      }
     />
   );
 }
